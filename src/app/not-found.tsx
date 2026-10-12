@@ -1,23 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Terminal, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
+import NotFoundMeme from "@/components/not-found-meme";
 
-export default function NotFound() {
+export const metadata: Metadata = {
+  title: "404 - Page Not Found",
+  description: "The page you're looking for doesn't exist or has been moved.",
+};
+
+export default function NotFoundPage() {
   return (
-    <div className="min-h-screen bg-space-950 flex flex-col items-center justify-center p-6 text-center">
-      <div className="w-16 h-16 rounded-2xl bg-cyan-950/60 border border-cyan-500/40 flex items-center justify-center text-cyan-400 mb-6 shadow-neon-cyan">
-        <Terminal size={32} />
-      </div>
-      <h1 className="text-4xl font-extrabold text-white font-mono mb-2">404 // NOT_FOUND</h1>
-      <p className="text-sm font-mono text-slate-400 max-w-md mb-8">
-        The coordinates you navigated to do not exist within this sector.
+    <main className="flex min-h-[100svh] flex-col items-center justify-center px-6 pb-16 pt-32 text-center">
+      <p className="font-display text-7xl font-bold tracking-tight sm:text-8xl" aria-hidden="true">
+        404
       </p>
+      <h1 className="mt-4 text-xl font-semibold sm:text-2xl">Page not found</h1>
+      <p className="mt-3 max-w-sm text-sm text-muted-foreground sm:text-base">
+        This page disappeared. Or maybe it never existed.
+      </p>
+      <div className="mt-8 w-full max-w-[426px]">
+        <NotFoundMeme />
+      </div>
       <Link
         href="/"
-        className="px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-mono text-xs font-semibold shadow-neon-cyan transition-all flex items-center gap-2"
+        className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
-        <ArrowLeft size={14} />
-        <span>Return to System Origin</span>
+        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+        Back to home
       </Link>
-    </div>
+    </main>
   );
 }

@@ -1,46 +1,57 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
+import { Space_Grotesk, Unbounded } from "next/font/google";
 import "./globals.css";
+import { config } from "@/data/config";
 
-export const viewport: Viewport = {
-  themeColor: "#050811",
-  width: "device-width",
-  initialScale: 1,
-};
+import Script from "next/script";
+import SiteFrame from "@/components/site-frame";
+import GitHubStars from "@/components/header/github-stars";
+import { Providers } from "@/components/providers";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { UMAMI_SRC } from "@/lib/umami";
+
+/* Body/base font — Space Grotesk, bound to --font-sans (applied as `font-sans`
+ * on <html>). Everything that isn't a heading inherits this. */
+const spaceGroteskSans = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+/* Heading font — Unbounded, bound to --font-display and applied to h1–h6. */
+const unbounded = Unbounded({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Ujwal U Shettigar — Full-Stack Developer & CSE Undergraduate",
-  description:
-    "Personal portfolio of Ujwal U Shettigar. Computer Science Engineering student, full-stack developer with hands-on experience in React, Next.js, Node.js, Express, Supabase, Firebase, and C++ problem solving.",
-  keywords: [
-    "Ujwal U Shettigar",
-    "Full-Stack Developer",
-    "Computer Science Engineering",
-    "Sahyadri College of Engineering and Management",
-    "React",
-    "Next.js",
-    "Three.js",
-    "3D Portfolio",
-    "C++ DSA",
-    "Supabase",
-    "Firebase",
-    "LeetCode",
-  ],
-  authors: [{ name: "Ujwal U Shettigar", url: "https://github.com/Ujwalushettigar" }],
-  creator: "Ujwal U Shettigar",
+  // pins every relative/OG url to the .dev origin so nothing canonicalises back to .site
+  metadataBase: new URL(config.site),
+  alternates: { canonical: "./" },
+  title: config.title,
+  description: config.description.long,
+  keywords: config.keywords,
+  authors: [{ name: config.author }],
   openGraph: {
+    title: config.title,
+    description: config.description.short,
+    url: config.site,
+    images: [
+      {
+        url: config.ogImg,
+        width: 800,
+        height: 600,
+        alt: "Portfolio preview",
+      },
+    ],
     type: "website",
-    locale: "en_US",
-    url: "https://github.com/Ujwalushettigar",
-    title: "Ujwal U Shettigar — Developer Portfolio",
-    description:
-      "Full-Stack Developer & Computer Science Engineering Student. Explore interactive 3D technical keycaps, engineering projects, and algorithm problem-solving.",
-    siteName: "Ujwal U Shettigar Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ujwal U Shettigar — Developer Portfolio",
-    description:
-      "Full-Stack Developer & CSE Student · 3D Interactive Portfolio",
+    title: config.title,
+    description: config.description.short,
+    images: [config.ogImg],
   },
   robots: {
     index: true,
@@ -50,13 +61,37 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="dark">
-      <body className="font-sans antialiased bg-space-950 text-slate-100 selection:bg-cyan-500/30 selection:text-white min-h-screen">
-        {children}
+    <html
+      lang="en"
+      className={[
+        spaceGroteskSans.variable,
+        unbounded.variable,
+        "font-sans",
+      ].join(" ")}
+      suppressHydrationWarning
+    >
+      <head>
+        {process.env.UMAMI_SITE_ID && (
+          <Script
+            defer
+            src={UMAMI_SRC}
+            data-website-id={process.env.UMAMI_SITE_ID}
+          />
+        )}
+      </head>
+      <body>
+        <Providers>
+          <SiteFrame githubStars={<GitHubStars className="mr-4" />}>
+            {children}
+          </SiteFrame>
+        </Providers>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );
