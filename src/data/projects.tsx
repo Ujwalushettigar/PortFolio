@@ -33,7 +33,7 @@ const projects: Project[] = [
   {
     id: "quickfix-grocery",
     title: "QuickFix Grocery",
-    src: "/assets/backgrounds/portfolio.jpg",
+    src: "/assets/projects/quickfix-grocery.jpg",
     category: "Hyperlocal Delivery Platform",
     desc: "A hyperlocal rapid grocery delivery platform with four role-based access modules (Customer, Delivery Partner, Picker, Admin) integrating Supabase Auth, database schemas, and live realtime synchronization with bounded-wait substitution state machines.",
     highlights: [
@@ -116,7 +116,7 @@ const projects: Project[] = [
   {
     id: "ai-doc-intelligence",
     title: "AI Document Intelligence Platform",
-    src: "/assets/backgrounds/peakposts.jpg",
+    src: "/assets/projects/ai-doc-intelligence.jpg",
     category: "Multimodal Vision AI",
     desc: "An AI-powered document intelligence and analysis platform utilizing Google Gemini AI multimodal vision for automated optical character recognition, registration/expiry date extraction, and secure Firebase storage.",
     highlights: [
@@ -169,7 +169,7 @@ const projects: Project[] = [
   {
     id: "resto",
     title: "Resto",
-    src: "/assets/backgrounds/storekit.jpg",
+    src: "/assets/projects/resto.jpg",
     category: "Full-Stack Web Application",
     desc: "A highly responsive restaurant culinary web application engineered with React.js, Next.js, JavaScript, and Tailwind CSS. Features modular reusable components, verified code quality via ESLint, and live deployment on Vercel.",
     highlights: [
@@ -221,7 +221,7 @@ const projects: Project[] = [
   {
     id: "firetodo",
     title: "fireTodo",
-    src: "/assets/backgrounds/kanbi.jpg",
+    src: "/assets/projects/firetodo.jpg",
     category: "Task Management Tool",
     desc: "A full-stack task management application integrating Supabase backend persistence, REST API-based data retrieval, and cross-platform synchronization with zero data loss during active user sessions.",
     highlights: [
@@ -268,7 +268,7 @@ const projects: Project[] = [
   {
     id: "attendance-system",
     title: "Smart Curriculum Attendance System",
-    src: "/assets/backgrounds/waku.jpg",
+    src: "/assets/projects/attendance-system.jpg",
     category: "Academic Attendance Platform",
     desc: "A localized QR-code scanning attendance tracking system designed to accelerate attendance logging for university lecturers, prototyped with interactive UI/UX wireframes in Figma.",
     highlights: [
@@ -314,7 +314,7 @@ const projects: Project[] = [
   {
     id: "finance-coach",
     title: "AI Personal Finance Coach",
-    src: "/assets/backgrounds/codingducks.jpg",
+    src: "/assets/projects/finance-coach.jpg",
     category: "Budgeting & Financial Analytics",
     desc: "An intelligent personal finance and budgeting platform analyzing income streams and expenditures with automatic transaction categorization and cash-flow insights.",
     highlights: [

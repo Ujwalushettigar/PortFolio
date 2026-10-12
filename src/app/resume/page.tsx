@@ -1,9 +1,9 @@
 import ResumeView from "./resume-view";
 
 export const metadata = {
-  title: "Résumé | Naresh Khatri",
+  title: "Résumé | Ujwal U Shettigar",
   description:
-    "Résumé of Naresh Khatri — Senior Full-Stack Engineer. View online or download the PDF.",
+    "Résumé of Ujwal U Shettigar — Computer Science Engineering Student & Full-Stack Developer. View online or download the PDF.",
 };
 
 export default function ResumePage() {
