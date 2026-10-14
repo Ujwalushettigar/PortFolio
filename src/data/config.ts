@@ -1,7 +1,7 @@
 const config = {
   title: "Ujwal U Shettigar | Computer Science Engineering Student · Full-Stack Developer",
   description: {
-    long: "I build practical web applications, explore core computer science, and turn ideas into working software. Computer Science Engineering student at Sahyadri College of Engineering and Management (Class of 2028, CGPA: 9.23/10) with hands-on full-stack, Supabase, Firebase, and C++ problem-solving experience.",
+    long: "I build practical web applications, explore core computer science, and turn ideas into working software. Computer Science Engineering student at Sahyadri College of Engineering and Management (Class of 2028, CGPA: 9.21/10) with hands-on full-stack, Supabase, Firebase, and C++ problem-solving experience.",
     short:
       "Portfolio of Ujwal U Shettigar, Computer Science Engineering Student and Full-Stack Developer.",
   },
@@ -37,6 +37,21 @@ const config = {
     github: "https://github.com/Ujwalushettigar",
     leetcode: "https://leetcode.com/u/Ujwal_Shettigar/",
     resume: "/Ujwal_U_Shettigar_Resume.pdf",
+    dsaRepo: "https://github.com/Ujwalushettigar/DSA",
+  },
+  personal: {
+    name: "Ujwal U Shettigar",
+    degree: "Bachelor of Engineering (B.E.) in Computer Science & Engineering",
+    college: "Sahyadri College of Engineering and Management",
+    location: "Mangalore, Karnataka, India",
+    gradYear: "2028",
+    gradDate: "June 2028",
+    cgpa: "9.21/10",
+    cgpaRaw: "9.21",
+    cgpaScale: "10.0",
+    cgpaFormatted: "CGPA: 9.21 / 10.0",
+    cgpaBadge: "CGPA: 9.21/10",
+    problemsSolved: "160+",
   },
 };
 export { config };

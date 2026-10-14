@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
 import { GraduationCap, Award, Calendar, BookOpen, CheckCircle } from "lucide-react";
+import { config } from "@/data/config";
 
 const COURSEWORK = [
   { name: "Data Structures and Algorithms", code: "Core CS" },
@@ -57,7 +58,7 @@ export const EducationSection = () => {
               <div className="flex flex-col sm:items-end gap-1.5 self-start md:self-auto">
                 <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-mono text-sm font-bold">
                   <Award className="w-4 h-4 text-cyan-400" />
-                  <span>CGPA: 9.23 / 10.0</span>
+                  <span>{config.personal.cgpaFormatted}</span>
                 </div>
                 <span className="text-[11px] text-muted-foreground">Class of 2028 · Top Quartile</span>
               </div>

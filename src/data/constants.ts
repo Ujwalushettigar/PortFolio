@@ -290,7 +290,7 @@ export const EXPERIENCE: Experience[] = [
     title: "Bachelor of Engineering in Computer Science Engineering",
     company: "Sahyadri College of Engineering and Management, Mangalore",
     description: [
-      "Current CGPA: 9.23 / 10 (verified in official resume).",
+      "Current CGPA: 9.21 / 10 (verified in official resume).",
       "Core Coursework: Data Structures & Algorithms, Artificial Intelligence & Machine Learning Fundamentals, Cloud Computing, Database Management Systems, Object-Oriented Programming, and Advanced Web Technologies.",
       "Hands-on project work emphasizing database-backed applications, role-based authorization, and distributed workflows.",
       "Long-term technical curiosity and active exploration in graphics programming, OpenGL, and game development.",

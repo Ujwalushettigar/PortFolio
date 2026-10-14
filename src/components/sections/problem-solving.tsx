@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { config } from "@/data/config";
 import {
   Code2,
   ExternalLink,
@@ -61,12 +62,12 @@ const PATTERNS = [
 
 export const ProblemSolvingSection = () => {
   return (
-    <SectionWrapper id="problem-solving" className="max-w-6xl mx-auto py-20 px-4">
+    <SectionWrapper id="problem-solving" className="max-w-6xl mx-auto py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <SectionHeader
         id="problem-solving"
         title="Problem Solving"
         desc="Data structures, competitive programming, and algorithmic patterns solved in C++."
-        className="mb-14"
+        className="relative mb-10 sm:mb-14"
       />
 
       {/* Top Banner: Telemetry & Verified Links */}
@@ -75,9 +76,9 @@ export const ProblemSolvingSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         viewport={{ once: true }}
-        className="mb-10"
+        className="mb-8 sm:mb-12 relative z-10"
       >
-        <Card className="bg-gradient-to-r from-secondary/30 via-secondary/15 to-secondary/30 border-cyan-500/20 backdrop-blur-sm shadow-md">
+        <Card className="bg-card/95 dark:bg-card/90 border border-border/80 dark:border-border/60 backdrop-blur-md shadow-lg pointer-events-auto">
           <CardContent className="p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
               <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
@@ -98,23 +99,25 @@ export const ProblemSolvingSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 shrink-0">
               <Link
-                href="https://leetcode.com/u/Ujwal_Shettigar/"
+                href={config.social.leetcode}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                className="cursor-pointer"
               >
-                <Button className="flex items-center gap-2 font-medium bg-amber-500 hover:bg-amber-600 text-black">
+                <Button className="flex items-center gap-2 font-medium bg-amber-500 hover:bg-amber-600 text-black cursor-pointer shadow-sm">
                   <ExternalLink className="w-4 h-4" />
                   <span>LeetCode Profile</span>
                 </Button>
               </Link>
               <Link
-                href="https://github.com/Ujwalushettigar/DSA"
+                href={config.social.dsaRepo ?? "https://github.com/Ujwalushettigar/DSA"}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                className="cursor-pointer"
               >
-                <Button variant="outline" className="flex items-center gap-2 border-border hover:bg-secondary/40">
+                <Button variant="outline" className="flex items-center gap-2 border-border hover:bg-secondary/40 cursor-pointer">
                   <GitBranch className="w-4 h-4 text-cyan-400" />
                   <span>DSA Repository</span>
                 </Button>
@@ -125,7 +128,7 @@ export const ProblemSolvingSection = () => {
       </motion.div>
 
       {/* Grid of Algorithmic Patterns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
         {PATTERNS.map((pattern, index) => (
           <motion.div
             key={pattern.title}
@@ -133,11 +136,12 @@ export const ProblemSolvingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: index * 0.08 }}
             viewport={{ once: true }}
+            className="h-full"
           >
-            <Card className="h-full bg-secondary/10 border-border/70 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between">
+            <Card className="h-full bg-card/90 dark:bg-card/85 border border-border/70 dark:border-border/50 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between pointer-events-auto shadow-sm hover:shadow-md">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-secondary/40 border border-border">
+                  <div className="p-2.5 rounded-lg bg-secondary/60 border border-border">
                     {pattern.icon}
                   </div>
                   <h4 className="text-base font-semibold text-foreground">
@@ -154,7 +158,7 @@ export const ProblemSolvingSection = () => {
                     <Badge
                       key={tag}
                       variant="outline"
-                      className="text-[11px] font-mono border-border/60 bg-secondary/20 text-muted-foreground"
+                      className="text-[11px] font-mono border-border/60 bg-secondary/40 text-muted-foreground"
                     >
                       {tag}
                     </Badge>

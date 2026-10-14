@@ -1,6 +1,6 @@
 # 🌌 Ujwal U Shettigar — 3D Developer Portfolio
 
-A high-performance, dark space-themed interactive personal developer portfolio for **Ujwal U Shettigar**, Computer Science Engineering Undergraduate (Class of June 2028, CGPA: 9.23/10) at Sahyadri College of Engineering and Management, Mangalore.
+A high-performance, dark space-themed interactive personal developer portfolio for **Ujwal U Shettigar**, Computer Science Engineering Undergraduate (Class of June 2028, CGPA: 9.21/10) at Sahyadri College of Engineering and Management, Mangalore.
 
 Faithfully engineered following the architecture, design system, and 3D interactions of [Naresh-Khatri/3d-portfolio](https://github.com/Naresh-Khatri/3d-portfolio) (MIT License), powered by Next.js 16, React 19, `@chibi3d/runtime`, Three.js, GSAP ScrollTrigger, and Tailwind CSS.
 
@@ -18,7 +18,7 @@ All portfolio sections are arranged in one continuous, vertically scrollable lay
 2. **Hero Section (`#hero`)**:
    - Distinctive `Unbounded` display outline typography (`text-edge-outline font-display`).
    - Developer title: *Computer Science Engineering Student · Full-Stack Developer*.
-   - Education badge: *Undergraduate CSE · Class of 2028 | CGPA: 9.23/10*.
+   - Education badge: *Undergraduate CSE · Class of 2028 | CGPA: 9.21/10*.
    - Verified action buttons: One-click resume download, direct contact link, and verified profiles (GitHub, LinkedIn, LeetCode, Email).
    - Real 3D mechanical keyboard model loaded in hero floating pose.
 
@@ -50,7 +50,7 @@ All portfolio sections are arranged in one continuous, vertically scrollable lay
 7. **Education (`#education`)**:
    - **Sahyadri College of Engineering and Management, Mangalore**.
    - Degree: *Bachelor of Engineering (B.E.) in Computer Science & Engineering* (Nov 2024 – June 2028).
-   - Academic standing: **CGPA: 9.23 / 10.0** (Top Quartile).
+   - Academic standing: **CGPA: 9.21 / 10.0** (Top Quartile).
    - Verified relevant coursework: Data Structures and Algorithms, AI and ML Fundamentals, Cloud Computing, Database Management Systems, Object-Oriented Programming, Advanced Web Technologies.
 
 8. **Contact & Social Channels (`#contact`)**:

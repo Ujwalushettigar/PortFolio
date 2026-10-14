@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
 import { MapPin, GraduationCap, Code, Rocket, Gamepad2, Brain, Terminal } from "lucide-react";
+import { config } from "@/data/config";
 
 export const AboutSection = () => {
   return (
@@ -61,7 +62,7 @@ export const AboutSection = () => {
                   Undergraduate CSE · Class of June 2028
                 </Badge>
                 <Badge variant="outline" className="border-border text-muted-foreground bg-secondary/30 text-xs py-1 px-3">
-                  CGPA: 9.23 / 10.0
+                  {config.personal.cgpaFormatted}
                 </Badge>
                 <Badge variant="outline" className="border-emerald-500/30 text-emerald-400 bg-emerald-500/5 text-xs py-1 px-3">
                   160+ LeetCode Solved in C++

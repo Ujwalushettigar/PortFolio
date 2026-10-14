@@ -34,7 +34,7 @@ const SocialMediaButtons = () => {
     <div ref={ref} className="z-10 flex items-center gap-1">
       {show &&
         BUTTONS.map((button) => (
-          <Link href={button.href} key={button.name} target="_blank" title={button.name}>
+          <Link href={button.href} key={button.name} target="_blank" rel="noopener noreferrer" title={button.name}>
             <Button variant={"ghost"} size="icon">{button.icon}</Button>
           </Link>
         ))}

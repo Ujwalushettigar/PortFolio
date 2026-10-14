@@ -43,7 +43,7 @@ const HeroSection = () => {
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                     <span>Undergraduate CSE · Class of 2028</span>
                     <span className="text-border">|</span>
-                    <span className="text-foreground font-semibold">CGPA: 9.23/10</span>
+                    <span className="text-foreground font-semibold">{config.personal.cgpaBadge}</span>
                   </div>
                 </BlurIn>
 
@@ -163,6 +163,7 @@ const HeroSection = () => {
                     <Link
                       href={config.social.leetcode}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="cursor-can-hover"
                       title="LeetCode (160+ Solved)"
                     >

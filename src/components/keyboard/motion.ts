@@ -4,11 +4,20 @@ import { Euler, Quaternion } from "three";
 import type { ChibiSceneApi, Vec3 } from "@chibi3d/runtime";
 import type { KeyboardScene } from "./scene";
 
-export type KeyboardSection = "hero" | "skills" | "projects" | "contact";
+export type KeyboardSection =
+  | "hero"
+  | "skills"
+  | "projects"
+  | "problem-solving"
+  | "education"
+  | "contact";
+
 const SCROLL_SECTIONS = [
   { id: "skills", previous: "hero", threshold: 0.5 },
   { id: "projects", previous: "skills", threshold: 0.7 },
-  { id: "contact", previous: "projects", threshold: 0.3 },
+  { id: "problem-solving", previous: "projects", threshold: 0.4 },
+  { id: "education", previous: "problem-solving", threshold: 0.4 },
+  { id: "contact", previous: "education", threshold: 0.3 },
 ] as const;
 
 type Vector = { x: number; y: number; z: number };
@@ -66,9 +75,39 @@ export function createKeyboardMotion(
     const mobile = window.innerWidth < 768;
     const fit = Math.min(1, window.innerWidth / window.innerHeight * 1.05);
     const [centerX, centerY, centerZ] = scene.document.camera.target;
-    const size = fit * (section === "hero" ? 0.8 : section === "contact" ? 0.75 : section === "skills" ? (mobile ? 0.88 : 1.05) : 0.95);
-    const right = !mobile && section === "hero" ? 2.5 : !mobile && section === "contact" ? 3.8 : 0;
-    const up = mobile && section === "hero" ? -1.8 : section === "contact" ? -0.8 : 0;
+    const size =
+      fit *
+      (section === "hero"
+        ? 0.8
+        : section === "contact"
+        ? 0.75
+        : section === "skills"
+        ? mobile
+          ? 0.88
+          : 1.05
+        : section === "problem-solving" || section === "education"
+        ? mobile
+          ? 0.45
+          : 0.65
+        : 0.95);
+    const right =
+      !mobile && section === "hero"
+        ? 2.5
+        : !mobile && section === "contact"
+        ? 3.8
+        : !mobile && (section === "problem-solving" || section === "education")
+        ? 3.8
+        : 0;
+    const up =
+      mobile && section === "hero"
+        ? -1.8
+        : section === "contact"
+        ? -0.8
+        : mobile && (section === "problem-solving" || section === "education")
+        ? -2.2
+        : section === "problem-solving" || section === "education"
+        ? -0.5
+        : 0;
     return {
       // The placement origin is the keyboard's geometry center, independent of its labels.
       position: {
@@ -76,9 +115,12 @@ export function createKeyboardMotion(
         y: centerY + up * Math.sqrt(2 / 3),
         z: centerZ + right / Math.sqrt(2) - up / Math.sqrt(6),
       },
-      rotation: section === "projects" || (mobile && section === "contact")
-        ? { x: Math.PI, y: Math.PI / 3, z: Math.PI }
-        : { x: 0, y: section === "skills" ? (mobile ? Math.PI / 6 : Math.PI / 12) : 0, z: 0 },
+      rotation:
+        section === "projects" || (mobile && section === "contact")
+          ? { x: Math.PI, y: Math.PI / 3, z: Math.PI }
+          : section === "problem-solving" || section === "education"
+          ? { x: 0.15, y: -Math.PI / 4, z: 0.05 }
+          : { x: 0, y: section === "skills" ? (mobile ? Math.PI / 6 : Math.PI / 12) : 0, z: 0 },
       scale: { x: size, y: size, z: size },
     };
   };
