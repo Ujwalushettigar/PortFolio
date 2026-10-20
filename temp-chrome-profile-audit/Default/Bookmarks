@@ -1,0 +1,73 @@
+{
+   "checksum": "4b8e7d9632f9280ea35593f10c05e412",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13436947960506475",
+            "date_last_used": "0",
+            "guid": "d3b6b670-c1a7-49aa-9b2d-17975d55ec64",
+            "id": "8",
+            "name": "Agoda",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://js.redirect.hp.com/jumpstation?bd=agoda&c=232&locale=*&pf=*&tp=edge&TYPE=3",
+            "visit_count": 0
+         }, {
+            "date_added": "13436947960506079",
+            "date_last_used": "0",
+            "guid": "58c8349c-bef4-466f-a50f-67c3a2ab85ce",
+            "id": "7",
+            "name": "McAfee Security",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.mcafee.com/consumer/v/browserfav/hp.html",
+            "visit_count": 0
+         } ],
+         "date_added": "13436947960307304",
+         "date_last_used": "0",
+         "date_modified": "13436947960506475",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13436947960307304",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13436947960307304",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "workspaces_v2": {
+         "children": [  ],
+         "date_added": "13436947960307304",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "75aa6670-344f-549d-b742-660f029506ab",
+         "id": "5",
+         "name": "Workspaces",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCCawylehAQAAEgAqGERtOXlwblZ5MDZrbDVLVTVwWElQZ1E9PUgDoAYHEowBCAUShwEKHHdSQnJaTCs2UEE5YXZLZ2pOUDdKWERMY2Z2cz0SJDAxMWRkYWY0LTNhMWEtNWIzMi1hODk3LTE2ZmVmOWQ4MTFiMBgAIAAoADC15fj7njM4leb4+54zQJXm+PueM0ocbm14NjVzUUR2eEk4VGdFZXYrQStudHRvU240PWUAAAAAwj4CYAASjAEIAhKHAQocWWNTVG9udkVTUHdxQ3M0TDJjclZodjY4TDk4PRIkYTcxOTJmY2ItZTA2My01Y2RhLWI4MzYtY2Y1Y2U1Yjc3ZmM0GAAgACgAML+4nLPyMjiHvJyz8jJAh7ycs/IyShxvUFZraHdCUmJWNjVLQ1dSMitJT05IV29PdTg9ZQAAAADCPgJgABKMAQgBEocBChx5eEovNmZ2a2VjcjdrcDVFUXpCNHRXTHBkYkU9EiQxOWJlYzk2Ni00YTYzLTU5NTYtYTUyZi0zNjBmYjk4N2RlMzkYACAAKAAwvrics/IyOPW7nLPyMkD1u5yz8jJKHGFSQ1dMZ2hGOWI1SW5xS0lEdnVKL2p2UWtGYz1lAAAAAMI+AmAAEowBCAMShwEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SJDVkMzJjMDY3LWYxOTEtNWQwNC1iYTkwLTJjYmRkOTk2ZWFmZRgAIAAoADDEuJyz8jI4rbycs/IyQK28nLPyMkoceXpOQjAxY241NEE3Y1JVMHVUKy9QZ21UdFVvPWUAAAAAwj4CYAAwADgA",
+   "version": 1
+}

@@ -1,0 +1,29 @@
+2026-10-20 05:32:40.470: [INFO] CurrentProfilePath: C:\Users\UJWAL\Portfolio\temp-chrome-profile-audit\Default
+2026-10-20 05:32:40.470: [INFO] Profiles total count: 1
+2026-10-20 05:32:40.470: [INFO] Profile: name=Profile 1 path=C:\Users\UJWAL\Portfolio\temp-chrome-profile-audit\Default lastActive=null
+2026-10-20 05:32:40.470: [INFO] LastUsedProfileDir: C:\Users\UJWAL\Portfolio\temp-chrome-profile-audit\Default
+2026-10-20 05:32:40.470: [INFO] VisibilityChanged: 0
+2026-10-20 05:32:40.481: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.482: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.483: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.483: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.484: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.485: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.486: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.486: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.487: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.488: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:40.506: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-20 05:32:40.506: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-20 05:32:40.506: [INFO] OnDoneLoading sync enabled: 0
+2026-10-20 05:32:40.506: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-20 05:32:40.506: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-20 05:32:40.506: [INFO] BookmarksSnapshot Startup total=2 bar=2 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-20 05:32:40.563: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:41.252: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-20 05:32:41.256: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-20 05:32:41.260: [INFO] Primary account changed.
+2026-10-20 05:32:41.260: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2026-10-20 05:32:41.269: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-20 05:32:41.297: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-20 05:32:46.054: [INFO] Sync initialization duration: 4685ms
