@@ -62,9 +62,23 @@ const addClassNameRecursively = (
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, children, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
+    if (asChild) {
+      return (
+        <Slot
+          className={cn(
+            buttonVariants({ variant, size, className }),
+            "cursor-can-hover"
+          )}
+          ref={ref}
+          {...props}
+        >
+          {children}
+        </Slot>
+      );
+    }
+
     return (
-      <Comp
+      <button
         className={cn(
           buttonVariants({ variant, size, className }),
           "cursor-can-hover"
@@ -72,9 +86,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       >
-        {/* add pointer-events-none to every child recursively */}
         {addClassNameRecursively(children, "pointer-events-none")}
-      </Comp>
+      </button>
     );
   }
 );

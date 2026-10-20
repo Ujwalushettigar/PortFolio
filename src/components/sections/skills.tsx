@@ -36,8 +36,8 @@ const SKILL_CATEGORY_MAP: Record<string, { category: SkillCategory; application:
   css: { category: SKILL_CATEGORIES.FRONTEND, application: "Fluid layouts, CSS Grid, Flexbox, custom responsive breakpoints, animations" },
   nodejs: { category: SKILL_CATEGORIES.BACKEND, application: "QuickFix Grocery, AIDoc, fireTodo, asynchronous runtime services" },
   express: { category: SKILL_CATEGORIES.BACKEND, application: "REST API routing, authentication middlewares, controller pipelines" },
-  supabase: { category: SKILL_CATEGORIES.BACKEND, application: "QuickFix Grocery (Auth RBAC & Realtime streams), fireTodo (cloud sync)" },
-  firebase: { category: SKILL_CATEGORIES.BACKEND, application: "AIDoc (Cloud Firestore document records & date metadata persistence)" },
+  supabase: { category: SKILL_CATEGORIES.BACKEND, application: "QuickFix Grocery (Auth RBAC & Realtime PostgreSQL streams), relational schema persistence" },
+  firebase: { category: SKILL_CATEGORIES.BACKEND, application: "fireTodo (Email/Password authentication & user store), AIDoc" },
   sql: { category: SKILL_CATEGORIES.BACKEND, application: "Relational schema design, normalization, foreign keys, and query optimization" },
   git: { category: SKILL_CATEGORIES.TOOLS, application: "Version control, feature branching, clean rebase commits, repository maintenance" },
   github: { category: SKILL_CATEGORIES.TOOLS, application: "Multi-repo open source collaboration, pull request reviews, documentation" },
@@ -45,7 +45,7 @@ const SKILL_CATEGORY_MAP: Record<string, { category: SkillCategory; application:
   eslint: { category: SKILL_CATEGORIES.TOOLS, application: "Static analysis, syntax enforcement, and code hygiene in Resto and QuickFix" },
   linux: { category: SKILL_CATEGORIES.TOOLS, application: "Developer shell environments, bash utilities, package management, scripting" },
   opengl: { category: SKILL_CATEGORIES.EMERGING, application: "Computer graphics programming, shader pipeline fundamentals, 3D math" },
-  gemini: { category: SKILL_CATEGORIES.EMERGING, application: "AIDoc (Multimodal vision OCR, registration/expiry date extraction pipeline)" },
+  gemini: { category: SKILL_CATEGORIES.EMERGING, application: "AIDoc (Automated complaint classification, sentiment analysis, priority triage)" },
 };
 
 const SkillsSection = () => {

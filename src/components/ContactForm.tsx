@@ -68,12 +68,13 @@ const ContactForm = () => {
         router.push("/");
         clearTimeout(timer);
       }, 1000);
-    } catch (err) {
+    } catch (err: any) {
+      const message = err?.message || "Something went wrong! Please try again.";
       toast({
-        title: "Error",
-        description: "Something went wrong! Please try again.",
+        title: "Contact Notice",
+        description: message,
         className: cn(
-          "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
+          "top-0 w-full flex justify-center fixed md:max-w-md md:top-4 md:right-4"
         ),
         variant: "destructive",
       });
@@ -81,7 +82,7 @@ const ContactForm = () => {
     setLoading(false);
   };
   return (
-    <form className="min-w-7xl mx-auto sm:mt-4" onSubmit={handleSubmit} aria-busy={loading}>
+    <form className="w-full mx-auto sm:mt-2" onSubmit={handleSubmit} aria-busy={loading}>
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
         <LabelInputContainer>
           <Label htmlFor="fullname">Full name</Label>

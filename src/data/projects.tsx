@@ -11,7 +11,7 @@ import {
   SiJavascript,
   SiFigma,
 } from "react-icons/si";
-import { CheckCircle2, Shield, Layers, Users, Zap, Database } from "lucide-react";
+import { CheckCircle2, Shield, Layers, Users, Zap, Database, TrendingUp, Sparkles, Layout } from "lucide-react";
 
 export type Project = {
   id: string;
@@ -27,6 +27,7 @@ export type Project = {
     backend?: { title: string; icon: React.ReactNode }[];
   };
   content: React.ReactNode;
+  featured?: boolean;
 };
 
 const projects: Project[] = [
@@ -34,16 +35,16 @@ const projects: Project[] = [
     id: "quickfix-grocery",
     title: "QuickFix Grocery",
     src: "/assets/projects/quickfix-grocery.jpg",
-    category: "Hyperlocal Delivery Platform",
-    desc: "A hyperlocal rapid grocery delivery platform with four role-based access modules (Customer, Delivery Partner, Picker, Admin) integrating Supabase Auth, database schemas, and live realtime synchronization with bounded-wait substitution state machines.",
+    category: "Hyperlocal Quick-Commerce",
+    desc: "A full-stack grocery order fulfillment and delivery platform built with React, Vite, Node.js/Express, and PostgreSQL / Supabase. Manages the complete order lifecycle across four decoupled role workspaces: Customer ordering, dark-store Picker fulfillment with bounded customer substitution timeouts, Delivery Partner dispatch routing, and Admin operational analytics.",
     highlights: [
-      "Customer: Live catalog browsing, cart ordering, realtime delivery tracking, and substitution approvals.",
-      "Picker: In-store item availability confirmation and bounded-wait customer substitution proposals.",
-      "Delivery Partner: Automatic courier assignment, map routing, and delivery fulfillment confirmation.",
-      "Admin: Store fulfillment analytics, substitution rates, fulfillment times, and matching audits.",
+      "Multi-role architecture with dedicated Customer, Picker, Delivery Courier, and Store Admin portals.",
+      "Real-time state synchronization via Supabase Postgres change streams for instant order lifecycle updates.",
+      "Fulfillment state machine managing item substitutions with bounded customer confirmation timeouts.",
+      "Collaborative engineering project developed with Sweekk (no-delivery repository).",
     ],
-    github: "https://github.com/Ujwalushettigar/QuickFix-Grocery",
-    live: "#",
+    github: "https://github.com/Sweekk/no-delivery",
+    featured: true,
     skills: {
       frontend: [
         { title: "React", icon: <SiReact className="w-full h-full text-[#61dafb]" /> },
@@ -54,7 +55,7 @@ const projects: Project[] = [
       backend: [
         { title: "Node.js", icon: <SiNodedotjs className="w-full h-full text-[#339933]" /> },
         { title: "Express.js", icon: <SiExpress className="w-full h-full text-slate-300" /> },
-        { title: "Supabase DB", icon: <SiSupabase className="w-full h-full text-[#3ecf8e]" /> },
+        { title: "PostgreSQL", icon: <Database className="w-full h-full text-[#336791]" /> },
         { title: "Supabase Realtime", icon: <SiSupabase className="w-full h-full text-[#3ecf8e]" /> },
       ],
     },
@@ -93,19 +94,19 @@ const projects: Project[] = [
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
               <span>
-                <strong>Authentication &amp; RBAC:</strong> Configured strict role-based access control with Supabase Auth, preventing unauthorized access across customer, picker, courier, and administrative endpoints.
+                <strong>Authentication &amp; RBAC:</strong> Configured role-based access control with Supabase Auth, isolating customer, picker, courier, and administrative views.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
               <span>
-                <strong>Realtime Database Synchronization:</strong> Subscribed to live Supabase Postgres change streams, keeping pickers, couriers, and customers continuously synchronized without manual polling.
+                <strong>Realtime Database Synchronization:</strong> Subscribed to live Supabase Postgres change streams, keeping pickers, couriers, and customers synchronized across order state transitions.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
               <span>
-                <strong>Bounded-Wait Substitution State Machine:</strong> Designed a finite state machine to manage item substitutions when inventory is depleted, enforcing bounded customer response timeouts and debugging substitution matching algorithms.
+                <strong>Substitution Workflow:</strong> Managed item substitutions when inventory is depleted, enforcing customer response timeouts before order finalization.
               </span>
             </li>
           </ul>
@@ -114,71 +115,20 @@ const projects: Project[] = [
     ),
   },
   {
-    id: "ai-doc-intelligence",
-    title: "AI Document Intelligence Platform",
-    src: "/assets/projects/ai-doc-intelligence.jpg",
-    category: "Multimodal Vision AI",
-    desc: "An AI-powered document intelligence and analysis platform utilizing Google Gemini AI multimodal vision for automated optical character recognition, registration/expiry date extraction, and secure Firebase storage.",
-    highlights: [
-      "Google Gemini AI multimodal vision integration for scanning physical paperwork and certificates.",
-      "Automated extraction of registration numbers, issue dates, and expiry dates with zero manual transcription.",
-      "Cloud Firebase Firestore persistence for secure document record storage and structured metadata queries.",
-    ],
-    github: "https://github.com/Ujwalushettigar/AIDoc",
-    live: "#",
-    skills: {
-      frontend: [
-        { title: "React", icon: <SiReact className="w-full h-full text-[#61dafb]" /> },
-        { title: "JavaScript", icon: <SiJavascript className="w-full h-full text-[#f7df1e]" /> },
-      ],
-      backend: [
-        { title: "Google Gemini AI", icon: <Zap className="w-full h-full text-[#4285f4]" /> },
-        { title: "Node.js", icon: <SiNodedotjs className="w-full h-full text-[#339933]" /> },
-        { title: "Express.js", icon: <SiExpress className="w-full h-full text-slate-300" /> },
-        { title: "Firebase", icon: <SiFirebase className="w-full h-full text-[#ffca28]" /> },
-      ],
-    },
-    content: (
-      <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
-        <div>
-          <h5 className="text-base font-semibold text-foreground mb-2">
-            Automated Vision Extraction Pipeline
-          </h5>
-          <p>
-            Manual document data entry from scanned forms, identification cards, and certificates is labor-intensive and prone to human error. This platform integrates the Google Gemini Vision API to evaluate uploaded document imagery, recognize spatial typography, and extract critical registration and expiry timestamps with structured validation.
-          </p>
-        </div>
-
-        <ul className="space-y-2">
-          <li className="flex items-start gap-2">
-            <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-            <span>Automated parsing of physical document imagery using Google Gemini AI multimodal vision.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-            <span>Extracted registration and expiry dates directly without manual transcription effort.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-            <span>Persisted verified document records and metadata directly into Firebase cloud database.</span>
-          </li>
-        </ul>
-      </div>
-    ),
-  },
-  {
     id: "resto",
     title: "Resto",
     src: "/assets/projects/resto.jpg",
-    category: "Full-Stack Web Application",
-    desc: "A highly responsive restaurant culinary web application engineered with React.js, Next.js, JavaScript, and Tailwind CSS. Features modular reusable components, verified code quality via ESLint, and live deployment on Vercel.",
+    category: "Full-Stack Web App",
+    desc: "A modern restaurant culinary web application engineered with Next.js, React, JavaScript, and Tailwind CSS, deployed live on Vercel. Delivers fluid interactive food catalogs, category filtering, detailed dish previews, and responsive client navigation.",
     highlights: [
-      "Modular component architecture developed in VS Code with strict ESLint code quality enforcement.",
-      "Dynamic culinary showcase with category filters, dish details, and responsive navigation.",
-      "Production deployment on Vercel edge infrastructure: resto-one-delta.vercel.app.",
+      "Verified live production deployment on Vercel: resto-one-delta.vercel.app.",
+      "Modular component hierarchy developed in VS Code with strict ESLint code quality enforcement.",
+      "Interactive culinary showcases with category filters, detailed dish previews, and responsive client navigation.",
+      "Collaborative development: Built Home, core components, menu pages, routing, and responsive layouts.",
     ],
     github: "https://github.com/Ujwalushettigar/Resto",
     live: "https://resto-one-delta.vercel.app/",
+    featured: true,
     skills: {
       frontend: [
         { title: "Next.js", icon: <SiNextdotjs className="w-full h-full text-slate-100" /> },
@@ -197,7 +147,7 @@ const projects: Project[] = [
             Modern Culinary Showcase &amp; Ordering Flow
           </h5>
           <p>
-            Resto delivers an interactive digital dining catalog featuring fluid client-side navigation, responsive menu filters, and seamless dark theme support. Developed with modular component architecture in VS Code and verified code quality via ESLint.
+            Resto delivers an interactive digital dining catalog featuring client-side navigation, responsive menu filters, and seamless dark theme support. Developed with modular component architecture in VS Code and verified code quality via ESLint.
           </p>
         </div>
 
@@ -208,11 +158,119 @@ const projects: Project[] = [
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-            <span>Maintained strict code standards and modular component reusability with ESLint.</span>
+            <span>Personal contribution: Implemented Home, components, menu pages, routing, and responsive behaviors in collaboration with Prajwal T Kulal.</span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-            <span>Deployed and verified on Vercel edge infrastructure at resto-one-delta.vercel.app.</span>
+            <span>Verified and deployed on Vercel edge infrastructure at resto-one-delta.vercel.app.</span>
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    id: "finance-coach",
+    title: "FinPilot — AI Personal Finance Coach",
+    src: "/assets/projects/finance-coach.jpg",
+    category: "FinTech & Financial Telemetry",
+    desc: "An AI-driven personal finance platform and asset telemetry dashboard engineered to analyze transaction ledgers, track category budgets, detect recurring subscription leaks, compute deterministic financial health scores, and surface actionable budgeting guidance.",
+    highlights: [
+      "Comprehensive transaction ledger supporting full CRUD, CSV import processing, and category classification.",
+      "Deterministic financial health scoring engine computing savings ratios, debt metrics, and expense volatility.",
+      "Personalized AI coaching insights generating contextual fiscal recommendations based on cash-flow patterns.",
+      "Visual analytics dashboard with interactive charts displaying spending distributions and progress toward savings targets.",
+    ],
+    github: "https://github.com/Ujwalushettigar/AI-Personal-Finance-Coach",
+    featured: true,
+    skills: {
+      frontend: [
+        { title: "React", icon: <SiReact className="w-full h-full text-[#61dafb]" /> },
+        { title: "Tailwind CSS", icon: <SiTailwindcss className="w-full h-full text-[#38bdf8]" /> },
+        { title: "JavaScript", icon: <SiJavascript className="w-full h-full text-[#f7df1e]" /> },
+      ],
+      backend: [
+        { title: "Node.js", icon: <SiNodedotjs className="w-full h-full text-[#339933]" /> },
+        { title: "Express.js", icon: <SiExpress className="w-full h-full text-slate-300" /> },
+      ],
+    },
+    content: (
+      <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
+        <div>
+          <h5 className="text-base font-semibold text-foreground mb-2 flex items-center gap-2">
+            <TrendingUp className="w-4 h-4 text-purple-400" />
+            Intelligent Cash-Flow Analysis &amp; Health Telemetry
+          </h5>
+          <p>
+            FinPilot combines deterministic personal finance accounting with AI-assisted budgeting advisory. Users record and import transactions via flexible CSV mapping, while the system computes financial health telemetry and identifies recurring subscription leaks.
+          </p>
+        </div>
+
+        <ul className="space-y-2">
+          <li className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+            <span>Automated transaction category detection and expenditure classification engine.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+            <span>Deterministic financial health index calculating debt-to-income and monthly savings ratios.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+            <span>Contextual AI coaching recommendations based on spending trends and budget variance.</span>
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    id: "ai-doc-intelligence",
+    title: "AIDoc — AI Complaint Analyser",
+    src: "/assets/projects/ai-doc-intelligence.jpg",
+    category: "Full-Stack AI Analysis",
+    desc: "A full-stack intelligence application integrating Google Gemini AI to automate customer complaint and text document triage. Ingests user submissions and delivers instant AI-generated sentiment analysis, priority classification, category detection, and recommended response drafts.",
+    highlights: [
+      "Google Gemini API integration delivering multi-factor text analysis, sentiment scoring, and urgency triage.",
+      "Automated classification assigning complaints to technical, billing, or service categories with structured validation.",
+      "Full-stack client-server architecture with Express.js REST API backend and reactive React frontend.",
+      "Eliminates manual triage overhead by pre-generating context-aware response suggestions for support teams.",
+    ],
+    github: "https://github.com/Ujwalushettigar/AIDoc",
+    featured: true,
+    skills: {
+      frontend: [
+        { title: "React", icon: <SiReact className="w-full h-full text-[#61dafb]" /> },
+        { title: "JavaScript", icon: <SiJavascript className="w-full h-full text-[#f7df1e]" /> },
+      ],
+      backend: [
+        { title: "Google Gemini AI", icon: <Zap className="w-full h-full text-[#4285f4]" /> },
+        { title: "Node.js", icon: <SiNodedotjs className="w-full h-full text-[#339933]" /> },
+        { title: "Express.js", icon: <SiExpress className="w-full h-full text-slate-300" /> },
+      ],
+    },
+    content: (
+      <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
+        <div>
+          <h5 className="text-base font-semibold text-foreground mb-2 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-indigo-400" />
+            Automated Triage &amp; Sentiment Classification Pipeline
+          </h5>
+          <p>
+            Manual customer complaint triage is time-consuming and often inconsistent. AIDoc leverages Google Gemini AI to ingest customer submissions, analyze sentiment polarity, assign urgency priority (High/Medium/Low), and draft context-specific resolution replies.
+          </p>
+        </div>
+
+        <ul className="space-y-2">
+          <li className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+            <span>Automated natural language analysis using the Google Gemini AI API.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+            <span>Multi-dimensional classification extracting sentiment score, priority level, and complaint domain.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+            <span>Full-stack implementation with clean controller-service separation in Express.js.</span>
           </li>
         </ul>
       </div>
@@ -222,44 +280,51 @@ const projects: Project[] = [
     id: "firetodo",
     title: "fireTodo",
     src: "/assets/projects/firetodo.jpg",
-    category: "Task Management Tool",
-    desc: "A full-stack task management application integrating Supabase backend persistence, REST API-based data retrieval, and cross-platform synchronization with zero data loss during active user sessions.",
+    category: "Task Management App",
+    desc: "A clean 3-page task management application built with the Next.js App Router, demonstrating Firebase Email/Password Authentication combined with Zustand global state management for reactive client-side store coordination and persistent task state.",
     highlights: [
-      "Integrated Supabase backend for persistent cloud storage and schema management.",
-      "REST API-based data retrieval guaranteeing zero task status loss across browser refreshes.",
-      "Responsive React interface optimized for quick task reordering, status updates, and filtering.",
+      "Next.js App Router architecture featuring Login/Signup, authenticated User Dashboard, and Todo Manager.",
+      "Secure client authentication with Firebase Email/Password Auth and protected route workflows.",
+      "Zustand global state management coordinating instantaneous task addition, toggle completion, and filtering.",
+      "Responsive mobile-first interface designed for fast task entry, status organization, and seamless session recovery.",
     ],
     github: "https://github.com/Ujwalushettigar/fireTodo",
-    live: "#",
     skills: {
       frontend: [
-        { title: "React.js", icon: <SiReact className="w-full h-full text-[#61dafb]" /> },
+        { title: "Next.js", icon: <SiNextdotjs className="w-full h-full text-slate-100" /> },
+        { title: "React", icon: <SiReact className="w-full h-full text-[#61dafb]" /> },
+        { title: "Tailwind CSS", icon: <SiTailwindcss className="w-full h-full text-[#38bdf8]" /> },
         { title: "JavaScript", icon: <SiJavascript className="w-full h-full text-[#f7df1e]" /> },
       ],
       backend: [
-        { title: "Supabase", icon: <SiSupabase className="w-full h-full text-[#3ecf8e]" /> },
+        { title: "Firebase Auth", icon: <SiFirebase className="w-full h-full text-[#ffca28]" /> },
         { title: "Node.js", icon: <SiNodedotjs className="w-full h-full text-[#339933]" /> },
       ],
     },
     content: (
       <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
         <div>
-          <h5 className="text-base font-semibold text-foreground mb-2">
-            Resilient Cross-Platform Cloud Synchronization
+          <h5 className="text-base font-semibold text-foreground mb-2 flex items-center gap-2">
+            <Layout className="w-4 h-4 text-emerald-400" />
+            Next.js App Router &amp; Zustand Global Store
           </h5>
           <p>
-            fireTodo demonstrates real-time cross-platform state synchronization. Integrating cloud backend persistence with RESTful endpoints, the application guarantees persistent task ordering, status tracking, and seamless session recovery.
+            fireTodo demonstrates practical state management in Next.js. Combining Firebase client authentication with a centralized Zustand store, the application separates authentication concerns from task state, providing fluid client-side interactions and protected dashboard routes.
           </p>
         </div>
 
         <ul className="space-y-2">
           <li className="flex items-start gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-            <span>Integrated Supabase connection for backend storage and REST API-based data retrieval.</span>
+            <span>Integrated Firebase Email/Password authentication with auth state listeners.</span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-            <span>Optimized cross-platform state synchronization ensuring zero data loss during active sessions.</span>
+            <span>Zustand store managing reactive client-side task operations without prop drilling.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>3-page App Router navigation: Login/Signup, User Dashboard, and Todo Manager.</span>
           </li>
         </ul>
       </div>
@@ -269,32 +334,32 @@ const projects: Project[] = [
     id: "attendance-system",
     title: "Smart Curriculum Attendance System",
     src: "/assets/projects/attendance-system.jpg",
-    category: "Academic Attendance Platform",
-    desc: "A localized QR-code scanning attendance tracking system designed to accelerate attendance logging for university lecturers, prototyped with interactive UI/UX wireframes in Figma.",
+    category: "Academic UI/UX Concept",
+    desc: "A localized QR-code attendance verification system architecture and high-fidelity UI/UX prototype created in Figma, engineered to accelerate attendance logging in university lecture halls while preventing proxy attendance.",
     highlights: [
-      "Localized QR-code scanning mechanism preventing proxy attendance logging in lecture halls.",
-      "Significantly faster attendance logging workflows for university professors and students.",
-      "High-fidelity UI/UX prototype created in Figma detailing instructor dashboards and student scanning views.",
+      "Time-bounded localized QR scanning workflow eliminating proxy logging in university lecture halls.",
+      "Comprehensive Figma UI/UX specification covering lecturer management console and student scanning views.",
+      "Streamlined academic check-in flow cutting typical attendance logging time from minutes to seconds.",
+      "Academic design project focused on usability ergonomics, accessibility, and intuitive interface layouts.",
     ],
-    github: "#",
-    live: "https://www.figma.com/design/PqN8HqYkF1yF4oD2lG9L7n/Smart-Attendance",
     skills: {
       frontend: [
         { title: "Figma (UI/UX)", icon: <SiFigma className="w-full h-full text-[#f24e1e]" /> },
         { title: "JavaScript", icon: <SiJavascript className="w-full h-full text-[#f7df1e]" /> },
       ],
       backend: [
-        { title: "Node.js", icon: <SiNodedotjs className="w-full h-full text-[#339933]" /> },
+        { title: "System Architecture", icon: <Database className="w-full h-full text-cyan-400" /> },
       ],
     },
     content: (
       <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
         <div>
-          <h5 className="text-base font-semibold text-foreground mb-2">
+          <h5 className="text-base font-semibold text-foreground mb-2 flex items-center gap-2">
+            <Users className="w-4 h-4 text-amber-400" />
             Localized QR Verification for Lecture Halls
           </h5>
           <p>
-            Developed a smart curriculum attendance tracker implementing a localized QR code scanning mechanism to accelerate attendance logging for university lecturers. Prototyped the complete lecturer and student interface in Figma to optimize ergonomics and navigation efficiency.
+            Designed a smart curriculum attendance tracker implementing a localized QR code scanning mechanism to accelerate attendance logging for university lecturers. Prototyped the complete lecturer and student interface in Figma to optimize ergonomics and navigation efficiency.
           </p>
         </div>
 
@@ -307,52 +372,9 @@ const projects: Project[] = [
             <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
             <span>Created high-fidelity UI/UX interactive wireframes in Figma before frontend implementation.</span>
           </li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    id: "finance-coach",
-    title: "AI Personal Finance Coach",
-    src: "/assets/projects/finance-coach.jpg",
-    category: "Budgeting & Financial Analytics",
-    desc: "An intelligent personal finance and budgeting platform analyzing income streams and expenditures with automatic transaction categorization and cash-flow insights.",
-    highlights: [
-      "Automated transaction category detection and expenditure classification.",
-      "Actionable fiscal suggestions based on monthly income patterns and expense volatility.",
-      "Interactive analytics charts surfacing visual spending distributions and saving goals.",
-    ],
-    github: "https://github.com/Ujwalushettigar/AI-Personal-Finance-Coach",
-    live: "#",
-    skills: {
-      frontend: [
-        { title: "JavaScript", icon: <SiJavascript className="w-full h-full text-[#f7df1e]" /> },
-        { title: "React", icon: <SiReact className="w-full h-full text-[#61dafb]" /> },
-      ],
-      backend: [
-        { title: "Node.js", icon: <SiNodedotjs className="w-full h-full text-[#339933]" /> },
-        { title: "Express.js", icon: <SiExpress className="w-full h-full text-slate-300" /> },
-      ],
-    },
-    content: (
-      <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
-        <div>
-          <h5 className="text-base font-semibold text-foreground mb-2">
-            Intelligent Cash-Flow Analysis
-          </h5>
-          <p>
-            An algorithmic budgeting and financial insights platform that analyzes user income streams and spending categories to deliver actionable fiscal recommendations with automated transaction tagging.
-          </p>
-        </div>
-
-        <ul className="space-y-2">
           <li className="flex items-start gap-2">
-            <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-            <span>Automated transaction category detection and expenditure classification.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-            <span>Surfaced real-time budgeting metrics and visual spending distributions.</span>
+            <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <span>Academic design project presented for college attendance workflow optimization.</span>
           </li>
         </ul>
       </div>

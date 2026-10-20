@@ -21,15 +21,16 @@ const ContactSection = () => {
           TOGETHER
         </>} />
       <div className="grid grid-cols-1 md:grid-cols-2 z-[9999] mx-4">
-        <Card className="min-w-7xl bg-white/70 dark:bg-black/70 backdrop-blur-sm rounded-xl mt-10 md:mt-20">
+        <Card className="w-full max-w-xl bg-card/90 dark:bg-card/85 backdrop-blur-md border border-border/80 rounded-xl mt-6 md:mt-12 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-4xl">Contact Form</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-3xl sm:text-4xl font-display font-bold">Contact Form</CardTitle>
+            <CardDescription className="text-sm text-muted-foreground mt-2">
               Please contact me directly at{" "}
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href={`mailto:${config.email}`}
-                className="text-gray-200 cursor-can-hover rounded-lg"
+                className="text-cyan-600 dark:text-cyan-400 font-medium underline underline-offset-4 hover:text-cyan-500 transition-colors"
               >
                 {config.email}
               </a>{" "}

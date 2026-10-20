@@ -22,7 +22,7 @@ const config = {
   ],
   author: "Ujwal U Shettigar",
   email: "ujwalshettigar@gmail.com",
-  site: "https://github.com/Ujwalushettigar",
+  site: "https://port-folio-ruby-mu.vercel.app",
 
   // for github stars / repos
   githubUsername: "Ujwalushettigar",
@@ -33,7 +33,7 @@ const config = {
   },
   social: {
     twitter: "https://github.com/Ujwalushettigar",
-    linkedin: "https://linkedin.com/in/ujwal-shettigar-ab497b2b3",
+    linkedin: "https://www.linkedin.com/in/ujwal-shettigar-ab497b2b3/",
     github: "https://github.com/Ujwalushettigar",
     leetcode: "https://leetcode.com/u/Ujwal_Shettigar/",
     resume: "/Ujwal_U_Shettigar_Resume.pdf",

@@ -21,17 +21,49 @@ import SectionWrapper from "../ui/section-wrapper";
 import ScrollingPreview from "../scrolling-preview";
 
 const ProjectsSection = () => {
+  const [activeTab, setActiveTab] = useState<"featured" | "all">("featured");
+
+  const filteredProjects = activeTab === "featured"
+    ? projects.filter((p) => p.featured)
+    : projects;
+
   return (
     <SectionWrapper id="projects" className="max-w-7xl mx-auto py-20 px-4">
       <SectionHeader
         id="projects"
         title="Featured Projects"
         desc="Production systems, multi-role web architectures, and multimodal AI pipelines."
-        className="mb-14"
+        className="mb-8"
       />
 
+      {/* Recruiter-friendly view filter */}
+      <div className="flex items-center justify-center gap-2 mb-10">
+        <button
+          onClick={() => setActiveTab("featured")}
+          className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-200 border ${
+            activeTab === "featured"
+              ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/40 shadow-sm"
+              : "bg-secondary/20 text-muted-foreground border-border/60 hover:text-foreground hover:border-border"
+          }`}
+          aria-pressed={activeTab === "featured"}
+        >
+          Featured Flagships ({projects.filter((p) => p.featured).length})
+        </button>
+        <button
+          onClick={() => setActiveTab("all")}
+          className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-200 border ${
+            activeTab === "all"
+              ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/40 shadow-sm"
+              : "bg-secondary/20 text-muted-foreground border-border/60 hover:text-foreground hover:border-border"
+          }`}
+          aria-pressed={activeTab === "all"}
+        >
+          All Engineering Projects ({projects.length})
+        </button>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
@@ -112,21 +144,31 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="p-5 sm:p-6 pt-0 border-t border-border/40 mt-4 flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           {project.github && project.github !== "#" && (
-            <Link href={project.github} target="_blank" rel="noreferrer">
-              <Button variant="outline" size="sm" className="h-8 px-2.5 text-xs gap-1.5">
+            <Button asChild variant="outline" size="sm" className="h-8 px-2.5 text-xs gap-1.5">
+              <Link
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${project.title} source code on GitHub`}
+              >
                 <Github className="w-3.5 h-3.5" />
                 <span>Code</span>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           )}
 
           {project.live && project.live !== "#" && (
-            <Link href={project.live} target="_blank" rel="noreferrer">
-              <Button variant="outline" size="sm" className="h-8 px-2.5 text-xs gap-1.5 text-cyan-400 border-cyan-500/30">
+            <Button asChild variant="outline" size="sm" className="h-8 px-2.5 text-xs gap-1.5 text-cyan-400 border-cyan-500/30">
+              <Link
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View live demo of ${project.title}`}
+              >
                 <ExternalLink className="w-3.5 h-3.5" />
                 <span>Live Demo</span>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           )}
         </div>
 
@@ -156,18 +198,25 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     <Link
                       href={project.github}
                       target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} source code on GitHub`}
                       className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
                     >
                       Source Code
                     </Link>
                   )}
                   {project.live && project.live !== "#" && (
-                    <Link href={project.live} target="_blank">
-                      <button className="group flex items-center gap-2 bg-primary text-primary-foreground text-sm font-medium px-4 py-1.5 rounded-full hover:bg-primary/80 transition-colors">
-                        Visit Live
+                    <Button asChild size="sm" className="rounded-full gap-2 group">
+                      <Link
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit live demo of ${project.title}`}
+                      >
+                        <span>Visit Live</span>
                         <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      </button>
-                    </Link>
+                      </Link>
+                    </Button>
                   )}
                 </div>
               </div>

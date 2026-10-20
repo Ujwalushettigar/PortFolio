@@ -4,7 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Download, ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import ResumeDoodle from "./resume-doodle";
 
 // Authoritative resume PDF
@@ -36,16 +37,18 @@ export default function ResumeView() {
             <ArrowLeft className="h-4 w-4" />
             Back to portfolio
           </Link>
-          <Button>
-            <a
-              href={RESUME_PATH}
-              download
-              className="flex gap-2 text-sm transition-colors hover:text-foreground"
-            >
-              <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-              Download PDF
-            </a>
-          </Button>
+          <a
+            href={RESUME_PATH}
+            download="Ujwal_U_Shettigar_Resume.pdf"
+            className={cn(
+              buttonVariants({ variant: "default", size: "sm" }),
+              "gap-2 text-sm shadow cursor-pointer group"
+            )}
+            aria-label="Download Ujwal U Shettigar's Resume PDF"
+          >
+            <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+            <span>Download PDF</span>
+          </a>
         </motion.div>
       </div>
 

@@ -106,31 +106,29 @@ const HeroSection = () => {
               </div>
 
               <div className="mt-7 flex flex-col gap-3 w-fit">
-                <Link
-                  href="/Ujwal_U_Shettigar_Resume.pdf"
-                  target="_blank"
-                  className="flex-1"
-                  download="Ujwal_U_Shettigar_Resume.pdf"
-                >
-                  <BoxReveal delay={1.8} width="100%">
-                    <Button className="flex items-center gap-2 w-full font-semibold">
+                <BoxReveal delay={1.8} width="100%">
+                  <Button asChild className="flex items-center gap-2 w-full font-semibold cursor-pointer shadow-sm">
+                    <a
+                      href="/Ujwal_U_Shettigar_Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download="Ujwal_U_Shettigar_Resume.pdf"
+                      aria-label="Download Ujwal U Shettigar Resume PDF"
+                    >
                       <File size={20} />
-                      <p>View & Download Resume</p>
-                    </Button>
-                  </BoxReveal>
-                </Link>
+                      <span>View &amp; Download Resume</span>
+                    </a>
+                  </Button>
+                </BoxReveal>
 
                 <div className="md:self-start flex flex-wrap items-center gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
-                      <Link href="#contact">
-                        <Button
-                          variant="outline"
-                          className="block w-full overflow-hidden"
-                        >
+                      <Button asChild variant="outline" className="overflow-hidden cursor-pointer">
+                        <Link href="#contact" aria-label="Navigate to contact form">
                           Contact Me
-                        </Button>
-                      </Link>
+                        </Link>
+                      </Button>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
                       <p>Get in touch directly</p>
@@ -138,49 +136,51 @@ const HeroSection = () => {
                   </Tooltip>
 
                   <div className="flex items-center h-full gap-2">
-                    <Link
-                      href={config.social.github}
-                      target="_blank"
-                      className="cursor-can-hover"
-                      title="GitHub Profile"
-                    >
-                      <Button variant="outline" size="icon">
+                    <Button asChild variant="outline" size="icon" className="cursor-can-hover">
+                      <a
+                        href={config.social.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub Profile"
+                        title="GitHub Profile"
+                      >
                         <SiGithub size={20} />
-                      </Button>
-                    </Link>
+                      </a>
+                    </Button>
 
-                    <Link
-                      href={config.social.linkedin}
-                      target="_blank"
-                      className="cursor-can-hover"
-                      title="LinkedIn Profile"
-                    >
-                      <Button variant="outline" size="icon">
+                    <Button asChild variant="outline" size="icon" className="cursor-can-hover">
+                      <a
+                        href={config.social.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn Profile"
+                        title="LinkedIn Profile"
+                      >
                         <FaLinkedin size={20} />
-                      </Button>
-                    </Link>
+                      </a>
+                    </Button>
 
-                    <Link
-                      href={config.social.leetcode}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cursor-can-hover"
-                      title="LeetCode (160+ Solved)"
-                    >
-                      <Button variant="outline" size="icon">
+                    <Button asChild variant="outline" size="icon" className="cursor-can-hover">
+                      <a
+                        href={config.social.leetcode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LeetCode Profile (160+ Solved)"
+                        title="LeetCode (160+ Solved)"
+                      >
                         <Code2 size={20} className="text-amber-400" />
-                      </Button>
-                    </Link>
+                      </a>
+                    </Button>
 
-                    <Link
-                      href={`mailto:${config.email}`}
-                      className="cursor-can-hover"
-                      title="Direct Email"
-                    >
-                      <Button variant="outline" size="icon">
+                    <Button asChild variant="outline" size="icon" className="cursor-can-hover">
+                      <a
+                        href={`mailto:${config.email}`}
+                        aria-label="Direct Email"
+                        title="Direct Email"
+                      >
                         <Mail size={20} />
-                      </Button>
-                    </Link>
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </div>
