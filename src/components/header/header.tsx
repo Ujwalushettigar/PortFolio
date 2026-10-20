@@ -97,7 +97,7 @@ const Header = ({ loader, githubStars }: HeaderProps) => {
         "fixed top-0 left-0 w-full z-50 transition-colors duration-300",
         isActive
           ? "bg-background/95 border-b border-border/80"
-          : "bg-background/80 backdrop-blur-md border-b border-border/40 shadow-xs"
+          : "glass-nav"
       )}
       initial={{ y: -80 }}
       animate={{ y: 0 }}

@@ -124,7 +124,7 @@ export default function LeetCodeActivity() {
   };
 
   return (
-    <Card className="w-full bg-card/90 dark:bg-card/85 border border-border/80 dark:border-border/60 backdrop-blur-md shadow-lg overflow-hidden">
+    <Card className="w-full glass-panel overflow-hidden">
       <CardContent className="p-5 sm:p-7 space-y-6">
         {/* Subsection Header & Metric Bar */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-border/50">
@@ -176,7 +176,7 @@ export default function LeetCodeActivity() {
 
         {/* View Mode & Year Controls */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-1">
-          <div className="flex items-center gap-1.5 bg-secondary/30 p-1 rounded-lg border border-border/60">
+          <div className="flex items-center gap-1.5 glass-subpanel p-1 rounded-lg">
             <button
               onClick={() => setViewMode("screenshot")}
               className={cn(

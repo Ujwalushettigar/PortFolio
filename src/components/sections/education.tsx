@@ -34,8 +34,8 @@ export const EducationSection = () => {
         transition={{ duration: 0.4 }}
         viewport={{ once: true }}
       >
-        <Card className="bg-secondary/10 border-border/70 backdrop-blur-sm shadow-md overflow-hidden">
-          <CardHeader className="p-6 sm:p-8 border-b border-border/50 bg-secondary/20">
+        <Card className="glass-panel overflow-hidden">
+          <CardHeader className="p-6 sm:p-8 border-b border-border/50 glass-subpanel">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 shrink-0 mt-1">
@@ -76,7 +76,7 @@ export const EducationSection = () => {
                 {COURSEWORK.map((course) => (
                   <div
                     key={course.name}
-                    className="p-3.5 rounded-xl bg-secondary/30 border border-border/60 hover:border-cyan-500/30 transition-colors flex items-start gap-3"
+                    className="glass-card-interactive p-3.5 rounded-xl flex items-start gap-3"
                   >
                     <CheckCircle className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <div>
@@ -94,7 +94,7 @@ export const EducationSection = () => {
 
             <div className="pt-2 border-t border-border/40 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-3">
               <span>Department of Computer Science &amp; Engineering, Sahyadri Campus</span>
-              <Badge variant="outline" className="border-border text-xs bg-secondary/20">
+              <Badge variant="outline" className="glass-badge text-xs">
                 Accredited by NBA &amp; NAAC Grade A
               </Badge>
             </div>

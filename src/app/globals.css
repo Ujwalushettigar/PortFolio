@@ -38,6 +38,12 @@ body {
     --brand: #171717;
     --accent-solid: #171717;
     --accent-glow: transparent;
+
+    /* Standardized Portfolio Glass Design Tokens (Light Mode) */
+    --portfolio-glass-bg: hsl(0 0% 100% / 0.90);
+    --portfolio-glass-bg-subtle: hsl(210 40% 96.1% / 0.40);
+    --portfolio-glass-border: hsl(214.3 31.8% 91.4% / 0.80);
+    --portfolio-glass-blur: 12px;
   }
 
   .dark {
@@ -69,6 +75,12 @@ body {
     --brand: #f5f5f5;
     --accent-solid: #f5f5f5;
     --accent-glow: transparent;
+
+    /* Standardized Portfolio Glass Design Tokens (Dark Mode) */
+    --portfolio-glass-bg: hsl(222.2 84% 4.9% / 0.85);
+    --portfolio-glass-bg-subtle: hsl(217.2 32.6% 17.5% / 0.30);
+    --portfolio-glass-border: hsl(217.2 32.6% 17.5% / 0.60);
+    --portfolio-glass-blur: 12px;
   }
 }
 
@@ -137,6 +149,41 @@ body > canvas {
   .canvas-overlay-mode span,
   .canvas-overlay-mode svg {
     pointer-events: auto;
+  }
+
+  /* =========================================================================
+     STANDARDIZED PORTFOLIO GLASS SYSTEM (Reference: LeetCode / Problem Solving)
+     Consistent background alpha, backdrop blur, borders, and depth layering.
+     ========================================================================= */
+
+  /* Primary Glass Container (Flagships, Banners, Main Cards, HUDs, Modals) */
+  .glass-panel {
+    @apply bg-card/90 dark:bg-card/85 border border-border/80 dark:border-border/60 backdrop-blur-md shadow-lg pointer-events-auto;
+  }
+
+  /* Interactive Glass Card (Grid Cards, Project Cards, Patterns, Coursework) */
+  .glass-card-interactive {
+    @apply bg-card/90 dark:bg-card/85 border border-border/70 dark:border-border/50 backdrop-blur-md shadow-sm hover:shadow-md hover:border-cyan-500/40 transition-all duration-300 pointer-events-auto;
+  }
+
+  /* Inset Glass Subpanel / Sub-surface (Filter bars, Nested panels, Table headers) */
+  .glass-subpanel {
+    @apply bg-secondary/40 dark:bg-secondary/30 border border-border/60 dark:border-border/50 backdrop-blur-sm;
+  }
+
+  /* Translucent Glass Navigation Bar */
+  .glass-nav {
+    @apply bg-background/90 dark:bg-background/85 backdrop-blur-md border-b border-border/70 dark:border-border/50 shadow-sm;
+  }
+
+  /* Translucent Glass Footer Bar */
+  .glass-footer {
+    @apply bg-background/85 dark:bg-background/80 backdrop-blur-md border-t border-border/70 dark:border-border/50;
+  }
+
+  /* Glass Badge / Tag */
+  .glass-badge {
+    @apply bg-secondary/50 dark:bg-secondary/40 border border-border/60 dark:border-border/40 text-muted-foreground backdrop-blur-sm;
   }
 }
 

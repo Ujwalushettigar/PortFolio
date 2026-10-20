@@ -28,7 +28,7 @@ export const AboutSection = () => {
           viewport={{ once: true }}
           className="lg:col-span-7 flex flex-col justify-between"
         >
-          <Card className="h-full bg-secondary/10 border-border/70 backdrop-blur-sm shadow-md flex flex-col justify-between">
+          <Card className="h-full glass-panel flex flex-col justify-between">
             <CardContent className="p-6 sm:p-8 space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
@@ -80,7 +80,7 @@ export const AboutSection = () => {
           viewport={{ once: true }}
           className="lg:col-span-5 flex flex-col gap-4"
         >
-          <Card className="bg-secondary/10 border-border/70 backdrop-blur-sm shadow-sm hover:border-cyan-500/40 transition-colors">
+          <Card className="glass-card-interactive hover:border-cyan-500/40">
             <CardContent className="p-5 flex items-start gap-4">
               <div className="p-2.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 shrink-0 mt-0.5">
                 <Code className="w-5 h-5" />
@@ -94,7 +94,7 @@ export const AboutSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-secondary/10 border-border/70 backdrop-blur-sm shadow-sm hover:border-amber-500/40 transition-colors">
+          <Card className="glass-card-interactive hover:border-amber-500/40">
             <CardContent className="p-5 flex items-start gap-4">
               <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 shrink-0 mt-0.5">
                 <Brain className="w-5 h-5" />
@@ -108,7 +108,7 @@ export const AboutSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-secondary/10 border-border/70 backdrop-blur-sm shadow-sm hover:border-purple-500/40 transition-colors">
+          <Card className="glass-card-interactive hover:border-purple-500/40">
             <CardContent className="p-5 flex items-start gap-4">
               <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0 mt-0.5">
                 <Gamepad2 className="w-5 h-5" />
@@ -122,7 +122,7 @@ export const AboutSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-secondary/10 border-border/70 backdrop-blur-sm shadow-sm hover:border-emerald-500/40 transition-colors">
+          <Card className="glass-card-interactive hover:border-emerald-500/40">
             <CardContent className="p-5 flex items-start gap-4">
               <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
                 <Rocket className="w-5 h-5" />

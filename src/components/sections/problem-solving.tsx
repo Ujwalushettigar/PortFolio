@@ -83,7 +83,7 @@ export const ProblemSolvingSection = () => {
         viewport={{ once: true }}
         className="mb-8 relative z-10"
       >
-        <Card className="bg-card/95 dark:bg-card/90 border border-border/80 dark:border-border/60 backdrop-blur-md shadow-lg pointer-events-auto">
+        <Card className="glass-panel">
           <CardContent className="p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
               <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
@@ -188,7 +188,7 @@ export const ProblemSolvingSection = () => {
             viewport={{ once: true }}
             className="h-full"
           >
-            <Card className="h-full bg-card/90 dark:bg-card/85 border border-border/70 dark:border-border/50 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between pointer-events-auto shadow-sm hover:shadow-md">
+            <Card className="h-full glass-card-interactive flex flex-col justify-between">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 rounded-lg bg-secondary/60 border border-border">
@@ -208,7 +208,7 @@ export const ProblemSolvingSection = () => {
                     <Badge
                       key={tag}
                       variant="outline"
-                      className="text-[11px] font-mono border-border/60 bg-secondary/40 text-muted-foreground"
+                      className="text-[11px] font-mono glass-badge"
                     >
                       {tag}
                     </Badge>

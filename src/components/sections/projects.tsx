@@ -42,8 +42,8 @@ const ProjectsSection = () => {
           onClick={() => setActiveTab("featured")}
           className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-200 border ${
             activeTab === "featured"
-              ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/40 shadow-sm"
-              : "bg-secondary/20 text-muted-foreground border-border/60 hover:text-foreground hover:border-border"
+              ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/40 shadow-sm font-semibold"
+              : "glass-subpanel text-muted-foreground hover:text-foreground hover:border-border"
           }`}
           aria-pressed={activeTab === "featured"}
         >
@@ -53,8 +53,8 @@ const ProjectsSection = () => {
           onClick={() => setActiveTab("all")}
           className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-200 border ${
             activeTab === "all"
-              ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/40 shadow-sm"
-              : "bg-secondary/20 text-muted-foreground border-border/60 hover:text-foreground hover:border-border"
+              ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/40 shadow-sm font-semibold"
+              : "glass-subpanel text-muted-foreground hover:text-foreground hover:border-border"
           }`}
           aria-pressed={activeTab === "all"}
         >
@@ -75,7 +75,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Card className="bg-secondary/10 border-border/70 backdrop-blur-sm shadow-md hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+    <Card className="glass-card-interactive flex flex-col justify-between overflow-hidden group">
       <div>
         {/* Visual Preview Container */}
         <div
@@ -131,7 +131,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 <Badge
                   key={index}
                   variant="outline"
-                  className="text-[10px] font-mono border-border bg-secondary/30 text-muted-foreground"
+                  className="text-[10px] font-mono glass-badge"
                 >
                   {skill.title}
                 </Badge>
@@ -183,7 +183,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
           <ResponsiveDialogContent className="md:max-w-4xl md:h-[85vh] md:!flex md:flex-col md:overflow-hidden md:p-0 md:gap-0">
             {/* Sticky header */}
-            <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-8 py-5">
+            <div className="shrink-0 border-b border-border/60 glass-subpanel px-8 py-5">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-4 min-w-0">
                   <h4 className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">

@@ -87,7 +87,7 @@ const SkillsSection = () => {
         viewport={{ once: true }}
         className="w-full mb-8"
       >
-        <Card className="bg-gradient-to-r from-secondary/30 via-secondary/20 to-secondary/30 border-cyan-500/30 backdrop-blur-md shadow-lg overflow-hidden">
+        <Card className="glass-panel overflow-hidden border-cyan-500/30">
           <CardContent className="p-6 sm:p-7">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-border/40">
               <div className="flex items-center gap-4">
@@ -127,7 +127,7 @@ const SkillsSection = () => {
                 <span className="text-xs text-muted-foreground font-mono">
                   KEY SHORTCUT:
                 </span>
-                <kbd className="px-2.5 py-1 text-xs font-mono font-semibold rounded bg-secondary/80 border border-border text-foreground shadow-sm">
+                <kbd className="px-2.5 py-1 text-xs font-mono font-semibold rounded glass-subpanel text-foreground shadow-sm">
                   {selectedSkill.shortcut ? selectedSkill.shortcut.replace("Key", "") : "SELECT"}
                 </kbd>
               </div>
@@ -170,7 +170,7 @@ const SkillsSection = () => {
               "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border",
               activeCategory === category
                 ? "bg-cyan-500 text-black border-cyan-400 font-semibold shadow-sm"
-                : "bg-secondary/20 text-muted-foreground border-border hover:bg-secondary/50 hover:text-foreground"
+                : "glass-subpanel text-muted-foreground hover:bg-secondary/60 hover:text-foreground"
             )}
           >
             {category}
@@ -197,11 +197,10 @@ const SkillsSection = () => {
                 onClick={() => setSelectedSkill(skill)}
                 style={{ "--skill": skill.color } as CSSProperties}
                 className={cn(
-                  "cursor-pointer group relative flex flex-col items-center justify-center gap-2.5 overflow-hidden rounded-2xl p-4",
-                  "border bg-secondary/20 backdrop-blur-sm transition-all duration-200",
+                  "cursor-pointer group relative flex flex-col items-center justify-center gap-2.5 overflow-hidden rounded-2xl p-4 transition-all duration-200 pointer-events-auto",
                   isSelected
-                    ? "border-cyan-400 bg-secondary/50 shadow-[0_0_25px_-5px_var(--skill)] ring-1 ring-cyan-400/50"
-                    : "border-border/60 hover:-translate-y-1 hover:border-[var(--skill)] hover:bg-secondary/40"
+                    ? "glass-panel border-cyan-400 shadow-[0_0_25px_-5px_var(--skill)] ring-1 ring-cyan-400/50"
+                    : "glass-card-interactive hover:-translate-y-1 hover:border-[var(--skill)]"
                 )}
               >
                 {/* per-skill colored glow */}

@@ -12,7 +12,7 @@ async function CopyrightYear() {
 
 function Footer() {
   return (
-    <footer className="flex w-full shrink-0 flex-col items-center gap-2 border-t border-border px-4 py-6 sm:flex-row md:px-6 sm:justify-between">
+    <footer className="glass-footer flex w-full shrink-0 flex-col items-center gap-2 px-4 py-6 sm:flex-row md:px-6 sm:justify-between relative z-10">
       <p className="text-xs text-gray-500 dark:text-gray-400">
         ©{" "}
         <Suspense fallback={null}>

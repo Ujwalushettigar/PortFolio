@@ -76,7 +76,7 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
             className="mb-16"
           >
             <Link href={`/blogs/${featured.slug}`} className="group block">
-              <div className="relative border border-border/50 rounded-2xl p-8 md:p-12 overflow-hidden transition-colors hover:border-[hsl(20,100%,70%)]/30 bg-card/30 backdrop-blur-sm">
+              <div className="relative rounded-2xl p-8 md:p-12 overflow-hidden transition-colors hover:border-cyan-500/40 glass-panel">
                 {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[hsl(20,100%,70%)]/10 to-transparent rounded-bl-full" />
 
@@ -151,7 +151,7 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
               }}
             >
               <Link href={`/blogs/${post.slug}`} className="group block h-full">
-                <div className="h-full border border-border/50 rounded-xl p-6 md:p-8 transition-all duration-300 hover:border-[hsl(20,100%,70%)]/30 hover:bg-card/40 bg-card/20 backdrop-blur-sm">
+                <div className="h-full rounded-xl p-6 md:p-8 transition-all duration-300 hover:border-cyan-500/40 glass-card-interactive">
                   <div className="flex items-center gap-3 mb-4 text-xs text-muted-foreground font-sans">
                     <span className="flex items-center gap-1.5">
                       <CalendarDays className="w-3 h-3" />

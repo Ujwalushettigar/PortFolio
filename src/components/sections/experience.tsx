@@ -52,13 +52,7 @@ const ExperienceCard = ({
       }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <Card
-        className={cn(
-          "bg-card text-card-foreground border-border",
-          "hover:border-primary/20 transition-colors duration-300",
-          "shadow-sm hover:shadow-md"
-        )}
-      >
+      <Card className="glass-card-interactive">
         <CardHeader className="pb-3">
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
             <div className="space-y-1">
@@ -69,7 +63,7 @@ const ExperienceCard = ({
                 {experience.company}
               </div>
             </div>
-            <Badge variant="secondary" className="w-fit font-mono text-xs font-normal">
+            <Badge variant="secondary" className="w-fit font-mono text-xs font-normal glass-subpanel">
               {experience.startDate} - {experience.endDate}
             </Badge>
           </div>
@@ -88,7 +82,7 @@ const ExperienceCard = ({
                 <Badge
                   key={skillName}
                   variant="outline"
-                  className="gap-2 text-xs font-normal bg-secondary/30 hover:bg-secondary/50 transition-colors border-transparent"
+                  className="gap-2 text-xs font-normal glass-badge hover:border-cyan-500/30 transition-colors"
                 >
                   <img
                     src={skill.icon}
