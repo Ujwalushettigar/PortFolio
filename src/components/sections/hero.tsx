@@ -165,8 +165,8 @@ const HeroSection = () => {
                         href={config.social.leetcode}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="LeetCode Profile (160+ Solved)"
-                        title="LeetCode (160+ Solved)"
+                        aria-label={`LeetCode Profile (${config.leetcodeStats.totalSolvedDisplay} Solved)`}
+                        title={`LeetCode (${config.leetcodeStats.totalSolvedDisplay} Solved)`}
                       >
                         <Code2 size={20} className="text-amber-400" />
                       </a>

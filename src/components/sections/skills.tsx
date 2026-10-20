@@ -24,7 +24,7 @@ export const SKILL_CATEGORIES = {
 export type SkillCategory = (typeof SKILL_CATEGORIES)[keyof typeof SKILL_CATEGORIES];
 
 const SKILL_CATEGORY_MAP: Record<string, { category: SkillCategory; application: string }> = {
-  cpp: { category: SKILL_CATEGORIES.LANG_CORE, application: "160+ LeetCode DSA Solutions, algorithmic patterns, STL containers" },
+  cpp: { category: SKILL_CATEGORIES.LANG_CORE, application: "280+ LeetCode DSA Solutions, algorithmic patterns, STL containers" },
   js: { category: SKILL_CATEGORIES.LANG_CORE, application: "QuickFix Grocery, Resto, AIDoc, fireTodo, full-stack client/server workflows" },
   oop: { category: SKILL_CATEGORIES.LANG_CORE, application: "Class hierarchies, encapsulation, clean software architecture across C++ & JS" },
   stl: { category: SKILL_CATEGORIES.LANG_CORE, application: "std::unordered_map, std::priority_queue, custom sorting & boundary lookups" },

@@ -51,7 +51,20 @@ const config = {
     cgpaScale: "10.0",
     cgpaFormatted: "CGPA: 9.21 / 10.0",
     cgpaBadge: "CGPA: 9.21/10",
-    problemsSolved: "160+",
+    problemsSolved: "280+",
+  },
+  leetcodeStats: {
+    username: "Ujwal_Shettigar",
+    profileUrl: "https://leetcode.com/u/Ujwal_Shettigar/",
+    totalSolved: 280,
+    totalSolvedDisplay: "280+",
+    easy: 190,
+    medium: 82,
+    hard: 8,
+    totalSubmissions: 1654,
+    activeDays: 256,
+    currentStreak: 120,
+    globalRanking: 568039,
   },
 };
 export { config };

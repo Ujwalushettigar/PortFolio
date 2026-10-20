@@ -65,7 +65,7 @@ export const AboutSection = () => {
                   {config.personal.cgpaFormatted}
                 </Badge>
                 <Badge variant="outline" className="border-emerald-500/30 text-emerald-400 bg-emerald-500/5 text-xs py-1 px-3">
-                  160+ LeetCode Solved in C++
+                  {config.leetcodeStats.totalSolvedDisplay} LeetCode Solved in C++
                 </Badge>
               </div>
             </CardContent>

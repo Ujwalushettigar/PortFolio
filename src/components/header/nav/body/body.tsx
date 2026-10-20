@@ -54,6 +54,24 @@ export default function Body({
     return chars;
   };
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsActive(false);
+    if (typeof window !== "undefined" && window.location.pathname === "/" && href.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = href.replace("/#", "");
+      if (targetId === "hero") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const el = document.getElementById(targetId);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 90;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }
+      window.history.pushState(null, "", `#${targetId}`);
+    }
+  };
+
   return (
     <div className={cn(styles.body, "flex flex-col items-end md:flex-row")}>
       <FunnyThemeToggle className="w-6 h-6 mr-6 flex md:hidden" />
@@ -65,6 +83,7 @@ export default function Body({
             key={`l_${index}`}
             href={href}
             target={target}
+            onClick={(e) => handleLinkClick(e, href)}
             className="cursor-can-hover rounded-lg"
           >
             <motion.p
@@ -72,7 +91,6 @@ export default function Body({
                 "font-display rounded-lg",
                 currentHref !== href ? "text-muted-foreground" : "underline"
               )}
-              onClick={() => setIsActive(false)}
               onMouseOver={() => setSelectedLink({ isActive: true, index })}
               onMouseLeave={() => setSelectedLink({ isActive: false, index })}
               variants={blur}
